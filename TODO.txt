@@ -1,0 +1,7 @@
+1. Build a 2D array representing a strands board. [ ]
+2. Build AVL Tree from the list of words. [ ]
+3. Set to store cordinates [ ]
+4. Algorithm: [ ]
+    write functions to check letters that are up,down,diagonals, etc.
+    some way to save letters to recall back to the last one that we checked stack.
+    write recursive function to check letters
