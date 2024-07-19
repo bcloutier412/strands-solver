@@ -38,9 +38,9 @@ def isInBounds(row, col):
 
 def main():
     # For loop to iterate through strandsArray. Each element we do the algorithm
-    # for row in range(len(strandsArray)):
-    #     for col in range(len(strandsArray[0])):
-    #         searchLetter(strandsArray[row][col], row, col, {strandsArray[row][col]})
+    for row in range(len(strandsArray)):
+        for col in range(len(strandsArray[0])):
+            searchLetter(strandsArray[row][col], row, col, {f"{strandsArray[row]}#{strandsArray[col]}"})
     
     print("searching: animal")
     print(dictionaryAVLTree.search_value("animal"))
