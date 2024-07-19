@@ -129,12 +129,25 @@ class AVLTree:
             current = current.left
         return current
 
-    def search(self, root, value):
-        if not root or root.value == value:
-            return root
+    def search(self, root, value, output=None):
+        if not output:
+            output={'isWord':False, 'isSubString':False}
+        # We made it through the AVL and didnt find a word so we will just return
+        if not root:
+            return output
+        
+        # Check to see if the value is a sub string of a word meaning there exists a possible combination we can find in the 2d matrix that includes this substring
+        if not output['isSubString'] and value == root.value[:len(value)]:
+            output['isSubString'] = True
+        
+        # We found a word
+        if root.value == value:
+            output['isWord'] = True
+            return output
+        
         if root.value < value:
-            return self.search(root.right, value)
-        return self.search(root.left, value)
+            return self.search(root.right, value, output)
+        return self.search(root.left, value, output)
 
     def insert_value(self, value):
         self.root = self.insert(self.root, value)

@@ -1,4 +1,4 @@
-from DictionaryAVLTree import dictionaryAVLTree
+from DictionaryAVLTree import dictionaryAVLTree, MAXIMUM_WL
 
 WIDTH, HEIGHT = 6, 8
 
@@ -19,11 +19,17 @@ def searchLetter(currentString, row, col, usedLetters):
     if not isInBounds(row, col):
         return
 
+    # if the string is too long then just return
+    if len(currentString) + 1 >= MAXIMUM_WL:
+        return
+    
     # 3 Possible conditions:
     #   1. Got to end of tree
     #   2. Found a sub string
     #   3. Found a word
     
+
+
 def isInBounds(row, col):
     if (row < 0 or row >= len(strandsArray)) or (col < 0 or col >= len(strandsArray[0])):
         return False
@@ -32,9 +38,18 @@ def isInBounds(row, col):
 
 def main():
     # For loop to iterate through strandsArray. Each element we do the algorithm
-    for row in range(len(strandsArray)):
-        for col in range(len(strandsArray[0])):
-            searchLetter(strandsArray[row][col], row, col, {strandsArray[row][col]})
+    # for row in range(len(strandsArray)):
+    #     for col in range(len(strandsArray[0])):
+    #         searchLetter(strandsArray[row][col], row, col, {strandsArray[row][col]})
+    
+    print("searching: animal")
+    print(dictionaryAVLTree.search_value("animal"))
+
+    print("searching: ajdajdkaldk")
+    print(dictionaryAVLTree.search_value("ajdajdkaldk"))
+
+    print("searching: mert")
+    print(dictionaryAVLTree.search_value("mert"))
     
 # Check functions
 # def checkRight(x, y):
