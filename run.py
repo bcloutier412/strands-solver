@@ -4,14 +4,14 @@ WIDTH, HEIGHT = 6, 8
 outputFile = open("strands_words.txt", "w")
 
 # strandsArray = [[0 for x in range(w)] for y in range(h)]
-strandsArray = [['e', 'e' ,'e', 'o', 'l', 'e'],
-                ['t', 'l', 'd', 'r', 't', 'r'],
-                ['c', 'n', 't', 'n', 'e', 'd'],
-                ['o', 'e', 'b', 'a', 'r', 'e'],
-                ['k', 's', 'y', 'o', 'c', 's'],
-                ['e', 'r', 'p', 'a', 'i', 'h'],
-                ['t', 'u', 'r', 'n', 'e', 'f'],
-                ['e', 'p', 'a', 'c', 's', 't']]
+strandsArray = [['e', 'i' ,'f', 'n', 'a', 'w'],
+                ['d', 'l', 'k', 'r', 'e', 's'],
+                ['b', 'e', 's', 'r', 'n', 'b'],
+                ['h', 'p', 't', 'y', 'i', 'g'],
+                ['t', 'o', 'a', 't', 'x', 's'],
+                ['n', 'h', 'e', 'c', 'i', 'e'],
+                ['u', 'o', 't', 'n', 'd', 'g'],
+                ['n', 'e', 's', 'i', 'r', 'b']]
 
 # recursive function
 # @Params
