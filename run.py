@@ -1,4 +1,4 @@
-from DictionaryAVLTree import dictionaryAVLTree, MAXIMUM_WL
+from DictionaryAVLTree import dictionaryAVLTree, MINIMUM_WL, MAXIMUM_WL
 
 WIDTH, HEIGHT = 6, 8
 
@@ -27,8 +27,29 @@ def searchLetter(currentString, row, col, usedLetters):
     #   1. Got to end of tree
     #   2. Found a sub string
     #   3. Found a word
-    
 
+    # If the word is less than the minimum then dont check and just process the next possible letter
+    if len(currentString) > MINIMUM_WL:
+        searchResults = dictionaryAVLTree.search_value(currentString)
+    
+        if searchResults['isSubString'] == False:
+            return
+        elif searchResults['isWord'] == True:
+            print(currentString)
+
+    # all possible directions to check
+    directions = [(-1, 0), (-1, 1), (0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1)]
+
+    for direction in directions:
+        newRow, newCol = row + direction[0], col + direction[1]
+        searchNextLetter(currentString, newRow, newCol, usedLetters)
+
+def searchNextLetter(currentString, row, col, usedLetters):
+    # Makes sure it is a valid element in the 2D matrix and also it hasnt been used yet
+    if isInBounds(row, col) and getId(row, col) not in usedLetters:
+        usedLetters.add(getId(row, col))
+        searchLetter(currentString + strandsArray[row][col], row, col, usedLetters)
+        usedLetters.remove(getId(row, col))
 
 def isInBounds(row, col):
     if (row < 0 or row >= len(strandsArray)) or (col < 0 or col >= len(strandsArray[0])):
@@ -36,39 +57,14 @@ def isInBounds(row, col):
     
     return True
 
+def getId(row, col):
+    return f"{strandsArray[row]}#{strandsArray[col]}"
+
 def main():
     # For loop to iterate through strandsArray. Each element we do the algorithm
     for row in range(len(strandsArray)):
         for col in range(len(strandsArray[0])):
-            searchLetter(strandsArray[row][col], row, col, {f"{strandsArray[row]}#{strandsArray[col]}"})
-    
-    print("searching: animal")
-    print(dictionaryAVLTree.search_value("animal"))
-
-    print("searching: ajdajdkaldk")
-    print(dictionaryAVLTree.search_value("ajdajdkaldk"))
-
-    print("searching: mert")
-    print(dictionaryAVLTree.search_value("mert"))
-    
-# Check functions
-# def checkRight(x, y):
-#     return True or False
-
-# def checkLeft(x, y):
-#     return True or False
-
-# def checkUp(x, y):
-#     return True or False
-
-# def checkDown(x, y):
-#     return True or False
-
-# def checkRightDiag(x,y):
-#     return True or False
-
-# def checkLeftDiag(x, y):
-#     return True or False
+            searchLetter(strandsArray[row][col], row, col, {getId(row, col)})
 
 main()
 
