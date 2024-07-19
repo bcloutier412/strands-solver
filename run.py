@@ -1,16 +1,17 @@
 from DictionaryAVLTree import dictionaryAVLTree, MINIMUM_WL, MAXIMUM_WL
 
 WIDTH, HEIGHT = 6, 8
+outputFile = open("strands_words.txt", "w")
 
 # strandsArray = [[0 for x in range(w)] for y in range(h)]
-strandsArray = [['e', 'h' ,'t', 'o', 'n', 'e'],
-                ['s', 'w', 'r', 't', 's', 'c'],
-                ['t', 'r', 'r', 'f', 'u', 'i'],
-                ['e', 'n', 's', 'e', 't', 'r'],
-                ['s', 'e', 'i', 'v', 'n', 'u'],
-                ['t', 'i', 't', 'i', 'b', 'd'],
-                ['e', 'n', 'w', 'o', 'r', 'u'],
-                ['m', 'p', 'l', 'e', 'e', 'k']]
+strandsArray = [['e', 'e' ,'e', 'o', 'l', 'e'],
+                ['t', 'l', 'd', 'r', 't', 'r'],
+                ['c', 'n', 't', 'n', 'e', 'd'],
+                ['o', 'e', 'b', 'a', 'r', 'e'],
+                ['k', 's', 'y', 'o', 'c', 's'],
+                ['e', 'r', 'p', 'a', 'i', 'h'],
+                ['t', 'u', 'r', 'n', 'e', 'f'],
+                ['e', 'p', 'a', 'c', 's', 't']]
 
 # recursive function
 # @Params
@@ -29,13 +30,13 @@ def searchLetter(currentString, row, col, usedLetters):
     #   3. Found a word
 
     # If the word is less than the minimum then dont check and just process the next possible letter
-    if len(currentString) > MINIMUM_WL:
+    if len(currentString) >= MINIMUM_WL:
         searchResults = dictionaryAVLTree.search_value(currentString)
     
         if searchResults['isSubString'] == False:
             return
         elif searchResults['isWord'] == True:
-            print(currentString)
+            outputFile.write(currentString + '\n')
 
     # all possible directions to check
     directions = [(-1, 0), (-1, 1), (0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1)]
@@ -67,4 +68,5 @@ def main():
             searchLetter(strandsArray[row][col], row, col, {getId(row, col)})
 
 main()
+outputFile.close()
 
