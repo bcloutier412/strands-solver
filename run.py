@@ -39,31 +39,15 @@ def searchLetter(currentString, row, col, usedLetters):
             outputFile.write(currentString + '\n')
 
     # all possible directions to check
-    cardinalDirections = [(-1, 0), (0, 1), (1, 0), (0, -1)]
-    diagonalDirections = [(-1, 1), (1, 1), (1, -1), (-1, -1)]
-    checkDiagonalDirections = [((-1, 0), (0, 1)), ((0, 1), (1, 0)), ((1, 0), (0, -1)), ((0, -1), (-1, 0))]
+    directions = [(-1, 0), (0, 1), (1, 0), (0, -1), (-1, 1), (1, 1), (1, -1), (-1, -1)]
 
-    for direction in cardinalDirections:
+    for direction in directions:
         newRow, newCol = row + direction[0], col + direction[1]
-        searchNextCardinalLetter(currentString, newRow, newCol, usedLetters)
-    
-    for index, direction in enumerate(diagonalDirections):
-        newRow, newCol = row + direction[0], col + direction[1]
-        checkRow1, checkCol1 = row + checkDiagonalDirections[index][0][0], col + checkDiagonalDirections[index][0][1]
-        checkRow2, checkCol2 = row + checkDiagonalDirections[index][1][0], col + checkDiagonalDirections[index][1][1]
-        searchNextDiagonalLetter(currentString, newRow, newCol, usedLetters, checkRow1, checkCol1, checkRow2, checkCol2)
+        searchNextLetter(currentString, newRow, newCol, usedLetters)
 
-
-def searchNextCardinalLetter(currentString, row, col, usedLetters):
+def searchNextLetter(currentString, row, col, usedLetters):
     # Makes sure it is a valid element in the 2D matrix and also it hasnt been used yet
     if isInBounds(row, col) and getId(row, col) not in usedLetters:
-        usedLetters.add(getId(row, col))
-        searchLetter(currentString + strandsArray[row][col], row, col, usedLetters)
-        usedLetters.remove(getId(row, col))
-
-def searchNextDiagonalLetter(currentString, row, col, usedLetters, checkRow1, checkCol1, checkRow2, checkCol2):
-    # Makes sure it is a valid element in the 2D matrix and also hasnt been used yet and also makes sure that it wont be searching a letter that goes diagonal between two picked letters
-    if isInBounds(row, col) and getId(row, col) not in usedLetters and not (getId(checkRow1, checkCol1) in usedLetters and getId(checkRow2, checkCol2) in usedLetters):
         usedLetters.add(getId(row, col))
         searchLetter(currentString + strandsArray[row][col], row, col, usedLetters)
         usedLetters.remove(getId(row, col))
