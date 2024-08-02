@@ -17,3 +17,5 @@
       </ul>
     <h3></h3>
 </section>
+
+resources: https://www.ocf.berkeley.edu/~jchu/publicportal/sudoku/0011047.pdf
