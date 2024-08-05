@@ -2,14 +2,14 @@
 
 <section>
   <h2>TODO</h2>
-    <h3>-> Brandon</h3>
+    <h3>Brandon</h3>
       <ul>
         <li>
           hi
         </li>
       </ul>
     <h3></h3>
-    <h3>-> Cal</h3>
+    <h3>Cal</h3>
       <ul>
         <li>
           hi
