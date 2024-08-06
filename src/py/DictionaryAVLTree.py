@@ -1,4 +1,4 @@
-from src.AVLTree import Node, AVLTree
+from AVLTree import Node, AVLTree
 import sys
 
 # Constants
@@ -10,16 +10,16 @@ def dynamic_print(text):
     sys.stdout.write('\r' + text)
     sys.stdout.flush()
 
-dictionaryAVLTree = AVLTree()
+dictionary_avl_tree = AVLTree()
 
 print("[Creating Dict AVL Tree]")
 
-with open("words_alpha.txt", "r") as file:
+with open("text_files/words_alpha.txt", "r") as file:
   counter = 0
   for word in file:
-    currWord = word.strip()
-    if len(currWord) >= MINIMUM_WL and len(currWord) <= MAXIMUM_WL:
-      dictionaryAVLTree.insert_value(currWord)
+    curr_word = word.strip()
+    if len(curr_word) >= MINIMUM_WL and len(curr_word) <= MAXIMUM_WL:
+      dictionary_avl_tree.insert_value(curr_word)
       counter += 1
       dynamic_print(f"{counter} words added")
 

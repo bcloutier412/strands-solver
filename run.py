@@ -1,4 +1,4 @@
-from DictionaryAVLTree import dictionaryAVLTree, MINIMUM_WL, MAXIMUM_WL
+from src.DictionaryAVLTree import dictionaryAVLTree, MINIMUM_WL, MAXIMUM_WL
 from DLX import nRow, nCol, createToridolMatrix, search, ProbMat, fillProbMat, printProbMat
 
 WIDTH, HEIGHT = 6, 8
