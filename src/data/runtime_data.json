@@ -1,17 +1,77 @@
 {
-  "total_words_to_complete_matrix": 0,
-  "gameboard": [
-      ["r", "o", "u", "s", "l", "u"],
-      ["e", "p", "f", "f", "n", "e"],
-      ["o", "s", "a", "t", "c", "h"],
-      ["r", "t", "s", "r", "i", "w"],
-      ["p", "a", "o", "y", "a", "e"],
-      ["t", "h", "p", "h", "t", "l"],
-      ["e", "l", "u", "m", "d", "e"],
-      ["n", "t", "o", "n", "e", "y"]
-  ],
-  "possible_spangrams": [],
-  "possible_words": [],
-  "found_spangram": [],
-  "possible_solutions_to_board": []
+    "WIDTH": 6,
+    "HEIGHT": 8,
+    "MINIMUM_WL": 4,
+    "MAXIMUM_WL": 15,
+    "total_words_to_complete_matrix": 7,
+    "gameboard": [
+        [
+            "r",
+            "o",
+            "u",
+            "s",
+            "l",
+            "u"
+        ],
+        [
+            "e",
+            "p",
+            "f",
+            "f",
+            "n",
+            "e"
+        ],
+        [
+            "o",
+            "s",
+            "a",
+            "t",
+            "c",
+            "h"
+        ],
+        [
+            "r",
+            "t",
+            "s",
+            "r",
+            "i",
+            "w"
+        ],
+        [
+            "p",
+            "a",
+            "o",
+            "y",
+            "a",
+            "e"
+        ],
+        [
+            "t",
+            "h",
+            "p",
+            "h",
+            "t",
+            "l"
+        ],
+        [
+            "e",
+            "l",
+            "u",
+            "m",
+            "d",
+            "e"
+        ],
+        [
+            "n",
+            "t",
+            "o",
+            "n",
+            "e",
+            "y"
+        ]
+    ],
+    "possible_spangrams": [],
+    "possible_words": [],
+    "found_spangram": [],
+    "possible_solutions_to_board": []
 }
