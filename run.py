@@ -5,14 +5,14 @@ WIDTH, HEIGHT = 6, 8
 outputFile = open("strands_words.txt", "w")
 
 # strandsArray = [[0 for x in range(w)] for y in range(h)]
-strandsArray = [['v', 'o' ,'b', 'a', 'e', 'd'],
-                ['e', 'h', 'g', 'h', 'i', 's'],
-                ['t', 'r', 'o', 'u', 'b', 'e'],
-                ['l', 'o', 'c', 't', 'o', 'n'],
-                ['m', 'a', 'a', 'i', 'b', 'u'],
-                ['o', 'n', 'e', 'e', 'e', 'n'],
-                ['n', 't', 'a', 'w', 't', 'd'],
-                ['g', 'h', 'e', 'n', 'r', 'e']]
+strandsArray = [['r', 'o' ,'u', 's', 'l', 'u'],
+                ['e', 'p', 'f', 'f', 'n', 'e'],
+                ['o', 's', 'a', 't', 'c', 'h'],
+                ['r', 't', 's', 'r', 'i', 'w'],
+                ['p', 'a', 'o', 'y', 'a', 'e'],
+                ['t', 'h', 'p', 'h', 't', 'l'],
+                ['e', 'l', 'u', 'm', 'd', 'e'],
+                ['n', 't', 'o', 'n', 'e', 'y']]
 totalWords = 7
 # strandsArray = [
 #     ['t', 'h', 'i', 's'],

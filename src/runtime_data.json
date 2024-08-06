@@ -1,0 +1,17 @@
+{
+  "total_words": 0,
+  "gameboard": [
+      ["r", "o", "u", "s", "l", "u"],
+      ["e", "p", "f", "f", "n", "e"],
+      ["o", "s", "a", "t", "c", "h"],
+      ["r", "t", "s", "r", "i", "w"],
+      ["p", "a", "o", "y", "a", "e"],
+      ["t", "h", "p", "h", "t", "l"],
+      ["e", "l", "u", "m", "d", "e"],
+      ["n", "t", "o", "n", "e", "y"]
+  ],
+  "possible_spangrams": [],
+  "possible_words": [],
+  "found_spangram": [],
+  "possible_solutions_to_board": []
+}

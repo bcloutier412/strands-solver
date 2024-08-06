@@ -1,4 +1,4 @@
-nRow = 1417
+nRow = 2220
 nCol = 48
 
 class Node:
@@ -158,7 +158,7 @@ def printSolutions():
     print()  # To move to a new line after printing all rowIDs
 
 def search(k):
-    if len(solutions) > 7:
+    if len(solutions) > 6:
         return
     
     if header.right == header:

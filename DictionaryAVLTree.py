@@ -1,4 +1,4 @@
-from AVLTree import Node, AVLTree
+from src.AVLTree import Node, AVLTree
 import sys
 
 # Constants

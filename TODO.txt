@@ -1,9 +1,20 @@
 1. Build a 2D array representing a strands board. [x]
 2. Build AVL Tree from the list of words. [x]
-3. Set to store cordinates [ ]
-4. Algorithm: [ ]
+3. Set to store cordinates [x]
+4. Algorithm: [x]
     write functions to check letters that are up,down,diagonals, etc.
     some way to save letters to recall back to the last one that we checked stack.
     write recursive function to check letters
-5. Edit AVL tree Search function [ ]
-6. 
+5. Edit AVL tree Search function [x]
+6. Build Algorithm X/DLX to solve exact cover problem [x]
+
+Building Chrome Extension
+
+Comments: We need to build the Javscript script for the browser, create the python program to find the spangram and the possible words in the matrix.
+We need to write the DLX algorithm in C++. We have a runtime_data json file to hold all the data that will be transmitted between the files.
+
+TODO:
+1. runtime_data.json (holds data that will be communicated between JS, Py, and C++ files) [x]
+2. Script to find the possible words in the 2D matrix -> find_possible_words.py [ ]
+3. Create MatrixWordFinder class that implements the Dictionary AVL Tree that has methods to find possible words [ ]
+4. Rewrite DLX Algorithm in C++ and create a class to run this algorithm
