@@ -1,4 +1,5 @@
 from AVLTree import Node, AVLTree
+from utils import get_relative_file_path
 import sys
 
 # Constants
@@ -14,7 +15,7 @@ dictionary_avl_tree = AVLTree()
 
 print("[Creating Dict AVL Tree]")
 
-with open("text_files/words_alpha.txt", "r") as file:
+with open(get_relative_file_path("../text_files/words_alpha.txt"), "r") as file:
   counter = 0
   for word in file:
     curr_word = word.strip()
