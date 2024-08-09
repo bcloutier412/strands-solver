@@ -15,6 +15,6 @@ We need to write the DLX algorithm in C++. We have a runtime_data json file to h
 
 TODO:
 1. runtime_data.json (holds data that will be communicated between JS, Py, and C++ files) [x]
-2. Script to find the possible words in the 2D matrix -> find_possible_words.py [ ]
+2. Script to find the possible words in the 2D matrix -> find_possible_words.py [x]
 3. Create MatrixWordFinder class that implements the Dictionary AVL Tree that has methods to find possible words [ ]
 4. Rewrite DLX Algorithm in C++ and create a class to run this algorithm

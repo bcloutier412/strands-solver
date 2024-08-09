@@ -5,14 +5,70 @@ WIDTH, HEIGHT = 6, 8
 outputFile = open("strands_words.txt", "w")
 
 # strandsArray = [[0 for x in range(w)] for y in range(h)]
-strandsArray = [['r', 'o' ,'u', 's', 'l', 'u'],
-                ['e', 'p', 'f', 'f', 'n', 'e'],
-                ['o', 's', 'a', 't', 'c', 'h'],
-                ['r', 't', 's', 'r', 'i', 'w'],
-                ['p', 'a', 'o', 'y', 'a', 'e'],
-                ['t', 'h', 'p', 'h', 't', 'l'],
-                ['e', 'l', 'u', 'm', 'd', 'e'],
-                ['n', 't', 'o', 'n', 'e', 'y']]
+strandsArray = [[
+            "i",
+            "m",
+            "e",
+            "d",
+            "o",
+            "u"
+        ],
+        [
+            "s",
+            "t",
+            "m",
+            "w",
+            "g",
+            "h"
+        ],
+        [
+            "e",
+            "l",
+            "v",
+            "i",
+            "o",
+            "b"
+        ],
+        [
+            "t",
+            "a",
+            "o",
+            "t",
+            "n",
+            "i"
+        ],
+        [
+            "o",
+            "c",
+            "e",
+            "h",
+            "c",
+            "a"
+        ],
+        [
+            "e",
+            "o",
+            "a",
+            "m",
+            "a",
+            "r"
+        ],
+        [
+            "a",
+            "w",
+            "d",
+            "y",
+            "t",
+            "u"
+        ],
+        [
+            "o",
+            "h",
+            "r",
+            "h",
+            "e",
+            "a"
+        ]]
 totalWords = 7
 # strandsArray = [
 #     ['t', 'h', 'i', 's'],
@@ -116,14 +172,14 @@ def main():
         for col in range(len(strandsArray[0])):
             searchLetter(strandsArray[row][col], row, col, {getId(row, col)}, [getId(row, col)], possibleWords)
 
-    fillProbMat(possibleWords)
-    # printProbMat()
+    # fillProbMat(possibleWords)
+    # # printProbMat()
 
-    # Create 4-way linked matrix
-    createToridolMatrix()
+    # # Create 4-way linked matrix
+    # createToridolMatrix()
 
-    # Search starting at level 0
-    search(0)
+    # # Search starting at level 0
+    # search(0)
 
 main()
 outputFile.close()
