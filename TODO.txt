@@ -18,3 +18,9 @@ TODO:
 2. Script to find the possible words in the 2D matrix -> find_possible_words.py [x]
 3. Create MatrixWordFinder class that implements the Dictionary AVL Tree that has methods to find possible words [ ]
 4. Rewrite DLX Algorithm in C++ and create a class to run this algorithm
+
+08/10: Decided to create a single main.py function to execute the find_words method and the find_spangrams function. This allows
+the use of the single DictionaryAVLTree for both scripts. I will create separate class methods and execute these inside of main
+
+The algorithm for finding spangrams: We are going to create a backtracking algorithm. We will iterate through the edges of the board and try to create a word.
+If that words ends at the other edge of the board then we know that it is a possible spangram. If it doesnt then we will check all the cells around it.
