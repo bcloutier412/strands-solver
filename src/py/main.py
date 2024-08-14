@@ -35,9 +35,9 @@ def main():
 
     # Finding all words in the 2D matrix
     matrix_word_finder.find_words()
+    matrix_word_finder.find_spangrams()
     matrix_word_finder.remove_possible_words_duplicates()
     matrix_word_finder.write_possible_words_to_txt()
-    # matrix_word_finder.find_spangrams()
 
     # Updating JSON files
     with open(get_relative_file_path("../../data/runtime_data.json"), "w") as file:
