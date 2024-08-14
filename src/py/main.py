@@ -1,5 +1,5 @@
 from MatrixWordFinderClass import MatrixWordFinder
-from DictionaryAVLTree import dictionary_avl_tree
+from DictionaryAVLTree import DictionaryAVLTree
 from utils import get_relative_file_path
 import json
 
@@ -15,6 +15,7 @@ def main():
 
     # Reset the possible_words array in realtime_data
     runtime_data["possible_words"] = []
+    runtime_data["possible_spangrams"] = []
 
     # Run for loop to replace id's in the gameboard
 
@@ -22,16 +23,21 @@ def main():
     matrix_word_finder = MatrixWordFinder(
         runtime_data["WIDTH"],
         runtime_data["HEIGHT"],
+        runtime_data["MINIMUM_SPANGRAM_LENGTH"],
         runtime_data["MINIMUM_WL"],
         runtime_data["MAXIMUM_WL"],
         updated_gameboard,
         runtime_data["total_words_to_complete_matrix"],
         runtime_data["possible_words"],
-        dictionary_avl_tree
+        runtime_data["possible_spangrams"],
+        DictionaryAVLTree(runtime_data["MINIMUM_SPANGRAM_LENGTH"], runtime_data["MAXIMUM_WL"])
     )
 
     # Finding all words in the 2D matrix
     matrix_word_finder.find_words()
+    matrix_word_finder.remove_possible_words_duplicates()
+    matrix_word_finder.write_possible_words_to_txt()
+    # matrix_word_finder.find_spangrams()
 
     # Updating JSON files
     with open(get_relative_file_path("../../data/runtime_data.json"), "w") as file:

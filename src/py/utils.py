@@ -3,6 +3,9 @@ import os
 def convert_row_col_to_id(row, col):
   return (row * 6) + col
 
+def convert_id_to_row_col(ID):
+  return [ID // 6, ID % 6]
+
 def is_in_matrix_bound(row, col, HEIGHT, WIDTH):
   if (row < 0 or row >= HEIGHT) or (col < 0 or col >= WIDTH):
     return False

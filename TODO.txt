@@ -18,3 +18,5 @@ TODO:
 2. Script to find the possible words in the 2D matrix -> find_possible_words.py [x]
 3. Create MatrixWordFinder class that implements the Dictionary AVL Tree that has methods to find possible words [ ]
 4. Rewrite DLX Algorithm in C++ and create a class to run this algorithm
+
+g++ -std=c++11 -O3 -march=native -flto -fno-plt -ffast-math -funroll-loops -o my_program main.cpp

@@ -1,74 +1,76 @@
-from src.py.DictionaryAVLTree import dictionary_avl_tree, MINIMUM_WL, MAXIMUM_WL
+from src.py.DictionaryAVLTree import DictionaryAVLTree
 from DLX import nRow, nCol, createToridolMatrix, search, ProbMat, fillProbMat, printProbMat
 
 WIDTH, HEIGHT = 6, 8
 outputFile = open("strands_words.txt", "w")
-
+dictionary_avl_tree = DictionaryAVLTree(3, 15)
 # strandsArray = [[0 for x in range(w)] for y in range(h)]
-strandsArray = [[
-            "i",
-            "m",
-            "e",
-            "d",
-            "o",
-            "u"
-        ],
+strandsArray = [
         [
+            "t",
             "s",
-            "t",
-            "m",
-            "w",
-            "g",
-            "h"
-        ],
-        [
             "e",
-            "l",
-            "v",
-            "i",
-            "o",
-            "b"
+            "u",
+            "q",
+            "e"
         ],
         [
-            "t",
-            "a",
-            "o",
-            "t",
-            "n",
-            "i"
-        ],
-        [
-            "o",
-            "c",
+            "r",
             "e",
             "h",
-            "c",
-            "a"
+            "r",
+            "a",
+            "s"
         ],
         [
-            "e",
-            "o",
+            "i",
+            "r",
+            "c",
+            "i",
+            "c",
+            "t"
+        ],
+        [
             "a",
+            "y",
             "m",
+            "p",
             "a",
             "r"
         ],
         [
-            "a",
-            "w",
-            "d",
+            "n",
             "y",
-            "t",
-            "u"
+            "i",
+            "n",
+            "g",
+            "c"
         ],
         [
             "o",
-            "h",
+            "l",
+            "m",
+            "f",
+            "l",
+            "k"
+        ],
+        [
+            "i",
+            "m",
+            "k",
+            "g",
+            "o",
+            "t"
+        ],
+        [
+            "s",
+            "w",
+            "a",
             "r",
-            "h",
-            "e",
-            "a"
-        ]]
+            "a",
+            "e"
+        ]
+    ]
 totalWords = 7
 # strandsArray = [
 #     ['t', 'h', 'i', 's'],
@@ -85,7 +87,7 @@ def searchLetter(currentString, row, col, usedLettersSet, usedLettersArray, poss
         return
 
     # if the string is too long then just return
-    if len(currentString) + 1 >= MAXIMUM_WL:
+    if len(currentString) + 1 >= 15:
         return
     
     # 3 Possible conditions:
@@ -94,7 +96,7 @@ def searchLetter(currentString, row, col, usedLettersSet, usedLettersArray, poss
     #   3. Found a word
 
     # If the word is less than the minimum then dont check and just process the next possible letter
-    if len(currentString) >= MINIMUM_WL:
+    if len(currentString) >= 4:
         searchResults = dictionary_avl_tree.search_value(currentString)
     
         if searchResults['isSubString'] == False:
@@ -172,14 +174,14 @@ def main():
         for col in range(len(strandsArray[0])):
             searchLetter(strandsArray[row][col], row, col, {getId(row, col)}, [getId(row, col)], possibleWords)
 
-    # fillProbMat(possibleWords)
-    # # printProbMat()
+    fillProbMat(possibleWords)
+    # printProbMat()
 
-    # # Create 4-way linked matrix
-    # createToridolMatrix()
+    # Create 4-way linked matrix
+    createToridolMatrix()
 
-    # # Search starting at level 0
-    # search(0)
+    # Search starting at level 0
+    search(0)
 
 main()
 outputFile.close()
