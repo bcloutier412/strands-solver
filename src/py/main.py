@@ -35,7 +35,7 @@ def main():
 
     # Finding all words in the 2D matrix
     matrix_word_finder.find_words()
-    matrix_word_finder.find_spangrams()
+    # matrix_word_finder.find_spangrams()
     matrix_word_finder.remove_possible_words_duplicates()
     matrix_word_finder.write_possible_words_to_txt()
 

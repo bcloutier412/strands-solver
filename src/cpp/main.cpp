@@ -33,7 +33,9 @@ int main() {
     }
   }
 
+  // Execute dlx solve
   dlx.solve();
+  dlx.printSolutionsSet();
 
   // Close the file
   file.close();

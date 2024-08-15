@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <set>
 
 class DLX {
 public:
@@ -69,8 +70,16 @@ public:
         std::cout << "Printing Solutions: ";
         for (Node* node : solutions) {
             std::cout << node->rowID << " ";
+            solutionsSet.insert(node->rowID);
         }
         std::cout << "\n";
+    }
+
+    void printSolutionsSet() {
+        std::cout << "Printing Solutions Set: ";
+        for (auto index : solutionsSet) {
+            std::cout << index << " ";
+        }
     }
 
 private:
@@ -78,6 +87,7 @@ private:
     std::vector<std::vector<Node*>> Matrix;
     std::vector<std::vector<bool>> ProbMat;
     std::vector<Node*> solutions;
+    std::set<int> solutionsSet;
     int nRow;
     int nCol;
     int totalWordsToCompleteMatrix;

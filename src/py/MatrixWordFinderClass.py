@@ -170,7 +170,6 @@ class MatrixWordFinder:
         #     print(word)
         # for key, value in self.word_list_break_points.items():
         #     print(key, value)
-        print(len(self.possible_words))
         return
 
     def remove_possible_words_duplicates(self):
@@ -234,7 +233,7 @@ class MatrixWordFinder:
 
                     stringLetters += self.gameboard[row][col]
                 self.outputFile.write(stringLetters + '\n')
-                self.possible_spangrams.append([stringLetters, usedLettersArray])
+                self.possible_words.append([stringLetters, usedLettersArray])
                 return 
             
             # If we know that the word doesnt end in the ending_cells so its not a spangram and we have exhausted 2 words then we will revert back
@@ -274,8 +273,6 @@ class MatrixWordFinder:
 
             for currentWordIndex in range(start_index, end_index):
                 check_for_spangram(currentWordIndex, set(self.possible_words[currentWordIndex][1]), self.possible_words[currentWordIndex][1].copy(), right_cells, 1)
-            
-        print(len(self.possible_spangrams))
 
         # for cell_id in left_cells:
         #     start_index = self.word_list_break_points[cell_id]
