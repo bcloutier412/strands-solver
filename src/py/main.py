@@ -2,6 +2,7 @@ from MatrixWordFinderClass import MatrixWordFinder
 from DictionaryAVLTree import DictionaryAVLTree
 from utils import get_relative_file_path
 import json
+import subprocess
 
 
 def main():
@@ -42,6 +43,17 @@ def main():
     # Updating JSON files
     with open(get_relative_file_path("../../data/runtime_data.json"), "w") as file:
         json.dump(runtime_data, file, indent=4, separators=(",", ": "))
+
+    result = subprocess.run(['../cpp/my_program'], capture_output=True, text=True)
+
+    # Check the return code (0 indicates success)
+    if result.returncode == 0:
+        print("Execution successful!")
+        # Output from the C++ program
+        print("Output:\n", result.stdout)
+    else:
+        print("Execution failed with return code", result.returncode)
+        print("Error output:\n", result.stderr)
 
     return 0
 
