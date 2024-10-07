@@ -161,7 +161,7 @@ class DictionaryAVLTree:
         if not root:
             return output
         
-        # Check to see if the value is a sub string of a word meaning there exists a possible combination we can find in the 2d matrix that includes this substring
+        # Check to see if the value is a substring of a word while traversing the tree meaning there exists the possibility of a word to be created in the 2D matrix
         if not output['isSubString'] and value == root.value[:len(value)]:
             output['isSubString'] = True
         
