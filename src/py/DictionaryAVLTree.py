@@ -34,6 +34,7 @@ class DictionaryAVLTree:
 
         print()
         print("[Finished Dict AVL Tree]")
+        print()
         
     def height(self, node):
         if not node:

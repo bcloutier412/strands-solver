@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <set>
+#include "json.hpp"
 
 class DLX {
 public:
@@ -67,19 +68,20 @@ public:
     }
 
     void printSolutions() {
-        std::cout << "Printing Solutions: ";
+        // std::cout << "Printing Solutions: ";
         for (Node* node : solutions) {
-            std::cout << node->rowID << " ";
+            // std::cout << node->rowID << " ";
             solutionsSet.insert(node->rowID);
         }
-        std::cout << "\n";
+        // std::cout << "\n";
     }
 
-    void printSolutionsSet() {
-        std::cout << "Printing Solutions Set: ";
+    void printSolutionsSet(nlohmann::json& runtime_data) {
+        std::cout << "[Solutions Set]" << std::endl;
         for (auto index : solutionsSet) {
-            std::cout << index << " ";
+            std::cout << runtime_data["possible_words"][index - 1][0] << std::endl;
         }
+        std::cout << "\n";
     }
 
 private:

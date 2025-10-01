@@ -35,6 +35,7 @@ def main():
     )
 
     # Finding all words in the 2D matrix
+    print("[Finding possible words]\n")
     matrix_word_finder.find_words()
     # matrix_word_finder.find_spangrams()
     matrix_word_finder.remove_possible_words_duplicates()
@@ -48,9 +49,8 @@ def main():
 
     # Check the return code (0 indicates success)
     if result.returncode == 0:
-        print("Execution successful!")
         # Output from the C++ program
-        print("Output:\n", result.stdout)
+        print(result.stdout)
     else:
         print("Execution failed with return code", result.returncode)
         print("Error output:\n", result.stderr)

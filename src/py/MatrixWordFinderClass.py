@@ -185,7 +185,7 @@ class MatrixWordFinder:
 
         # Trim the list to remove the remaining duplicates
         del self.possible_words[write_index:]
-        print(len(self.possible_words))
+        # print(len(self.possible_words))
         return
     
     def write_possible_words_to_txt(self):
